@@ -13,6 +13,9 @@ def nicknameHelper():
     nome = input("come ti chiami?")
 
     # Edge cases for nome
+    if not nome:
+        print("Entra un nome perf")
+        return
     if len(nome)<3:
         print("Devi entrare un nome actuale con lungezza di almeno 3 charrateri !")
         return
@@ -21,9 +24,12 @@ def nicknameHelper():
         print("nome devi essere un string ! ")
         return
     
-    # Edge cases for anno
+    # Edge cases for ann
     anno = input("anno di nascita?")
-
+    if not anno : 
+        print("Entera un anno bro")
+        return
+    
     if int(anno)>2026:
         print("Entra un anno vero per favore ! ")
         return
@@ -47,10 +53,12 @@ def nicknameHelper():
     return nomi_finale
 
 # call the helper func and store the list
+
 nicknames = nicknameHelper()
+if nicknames : 
+    print("Ecco la tua 3 nicknames randomica")
+    for nickname in nicknames:
+        print(nickname)
 
-print("Ecco la tua 3 nicknames randomica")
-
-# Loop to print names in the list
-for nickname in nicknames:
-    print(nickname)
+else : 
+    print("Finito con un errore")
